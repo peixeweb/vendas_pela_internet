@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://peixeweb.github.io/vendas_pela_internet/index.html</title>
+  <link>https://peixeweb.github.io/vendas_pela_internet/index.html</link>
+
+<item>
+     <link>https://peixeweb.github.io/vendas_pela_internet/index.html</link>
+     <title>Peixeweb - Agência de Tráfego</title>
+     <description>Peixeweb - Agência de Tráfego</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://peixeweb.github.io/vendas_pela_internet/terms.html</link>
+     <title>Termos de Uso - Peixeweb</title>
+     <description>Termos de Uso - Peixeweb</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://peixeweb.github.io/vendas_pela_internet/privacy.html</link>
+     <title>Política de Privacidade - Peixeweb</title>
+     <description>Política de Privacidade - Peixeweb</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
