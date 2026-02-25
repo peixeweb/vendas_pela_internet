@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peixeweb - Agência de Tráfego</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -65,7 +66,7 @@
             <div class="space-y-8">
                 <h1 class="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
                     Sua conta de anúncios <br />
-                    não precisa de mais verba. <br />
+                    não precisa de mais <span class="text-blue-500">verba.</span> <br />
                     Precisa de <br />
                     <span class="text-emerald-400">Inteligência.</span>
                 </h1>
@@ -98,14 +99,19 @@
             </div>
 
             <div class="relative">
-                <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-gray-900 aspect-video group cursor-pointer">
-                    <iframe 
-                        src="https://drive.google.com/file/d/1LXZjisKk1hT14xE2T3-p0DlmsPX2zAE8Ps_StDkmsqc/preview" 
-                        class="w-full h-full" 
-                        allow="autoplay; encrypted-media" 
-                        allowfullscreen
-                        title="Peixeweb Video"
-                    ></iframe>
+                <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-gray-900 aspect-video group cursor-pointer" id="video-container">
+                    <!-- Video Facade -->
+                    <div class="absolute inset-0 flex items-center justify-center bg-gray-900" id="video-placeholder">
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/20 to-black"></div>
+                        <button 
+                            onclick="loadVideo()"
+                            class="relative z-10 w-20 h-20 bg-emerald-500 hover:bg-emerald-600 rounded-full flex items-center justify-center transition-transform hover:scale-110 shadow-lg shadow-emerald-500/30 group"
+                            aria-label="Play Video"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play ml-1"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                        </button>
+                        <p class="absolute bottom-8 text-gray-400 text-sm font-medium tracking-wider uppercase">Assista ao Vídeo</p>
+                    </div>
                 </div>
             
                 <!-- Floating Card -->
@@ -134,9 +140,12 @@
                 <div class="relative order-2 lg:order-1">
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
                         <img 
-                            src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=2426" 
+                            src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" 
                             alt="Equipe Peixeweb - Escritório" 
                             class="w-full h-full object-cover"
+                            loading="lazy"
+                            width="800"
+                            height="600"
                         />
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     </div>
@@ -243,14 +252,20 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <img 
-                        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" 
+                        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" 
                         alt="Analytics Dashboard" 
                         class="rounded-2xl shadow-xl w-full h-64 object-cover md:translate-y-8"
+                        loading="lazy"
+                        width="600"
+                        height="400"
                     />
                     <img 
-                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
+                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" 
                         alt="Growth Chart" 
                         class="rounded-2xl shadow-xl w-full h-64 object-cover"
+                        loading="lazy"
+                        width="600"
+                        height="400"
                     />
                 </div>
             </div>
@@ -571,6 +586,7 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
@@ -618,6 +634,24 @@
                 mobileBadge.classList.remove('opacity-0', 'translate-y-10');
                 mobileBadge.classList.add('opacity-100', 'translate-y-0');
             }, 500);
+        }
+
+        // Video Facade Logic
+        function loadVideo() {
+            const container = document.getElementById('video-container');
+            const placeholder = document.getElementById('video-placeholder');
+            
+            // Create iframe
+            const iframe = document.createElement('iframe');
+            iframe.src = "https://drive.google.com/file/d/1LXZjisKk1hT14xE2T3-p0DlmsPX2zAE8Ps_StDkmsqc/preview";
+            iframe.className = "w-full h-full absolute inset-0";
+            iframe.allow = "autoplay; encrypted-media";
+            iframe.allowFullscreen = true;
+            iframe.title = "Peixeweb Video";
+            
+            // Clear placeholder and append iframe
+            placeholder.remove();
+            container.appendChild(iframe);
         }
     </script>
 </body>
