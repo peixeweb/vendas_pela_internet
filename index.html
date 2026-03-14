@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peixeweb - Agência de Tráfego</title>
+    <script>
+        // Fix for environments where window.fetch is a getter-only property (prevents polyfill errors)
+        try {
+            const originalFetch = window.fetch;
+            Object.defineProperty(window, 'fetch', {
+                value: originalFetch,
+                writable: true,
+                configurable: true
+            });
+        } catch (e) {
+            console.warn('Could not redefine window.fetch', e);
+        }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; }
-        section[id] { scroll-margin-top: 5rem; }
         .faq-answer {
             max-height: 0;
             overflow: hidden;
