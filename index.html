@@ -9,11 +9,11 @@
     <meta property="og:title" content="Peixeweb | Agência de Tráfego Pago e Engenharia de Lucro">
     <meta property="og:description" content="Transformamos dados em lucro líquido previsível com Tracking Server-Side e Otimização baseada em LTV.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://lh3.googleusercontent.com/d/1UCMSOadfQEJ0-xsTNdVct6AMCkt-D3yr">
+    <meta property="og:image" content="https://peixeweb.com.br/logo.png.png">
     <link rel="canonical" href="https://peixeweb.com.br/">
     
     <!-- Preload LCP Image -->
-    <link rel="preload" as="image" href="https://lh3.googleusercontent.com/d/1UCMSOadfQEJ0-xsTNdVct6AMCkt-D3yr">
+    <link rel="preload" as="image" href="logo.png.png">
 
     <!-- E-E-A-T Structured Data (LocalBusiness/Organization) -->
     <script type="application/ld+json">
@@ -21,7 +21,7 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Peixeweb Agência Digital",
-      "image": "https://lh3.googleusercontent.com/d/1UCMSOadfQEJ0-xsTNdVct6AMCkt-D3yr",
+      "image": "https://peixeweb.com.br/logo.png.png",
       "description": "Agência de tráfego pago especializada em Engenharia de Lucro, Google Ads, Meta Ads e Tracking Avançado.",
       "telephone": "+5511914716715",
       "email": "peixeweb@gmail.com",
@@ -33,22 +33,31 @@
     }
     </script>
     
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PR88G77B');</script>
+    <!-- Google Tag Manager (Delayed to improve PageSpeed) -->
+    <script>
+      setTimeout(function(){
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PR88G77B');
+      }, 3500);
+    </script>
     <!-- End Google Tag Manager -->
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPELK9GBT2"></script>
+    <!-- Google tag (gtag.js) (Delayed to improve PageSpeed) -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-TPELK9GBT2');
+      setTimeout(function(){
+        var script = document.createElement('script');
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-TPELK9GBT2";
+        script.async = true;
+        document.head.appendChild(script);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TPELK9GBT2');
+      }, 3500);
     </script>
     <!-- End Google tag -->
     <script>
@@ -72,12 +81,10 @@
             }
         });
     </script>
+    <link rel="preload" as="style" href="styles.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
         .faq-answer {
             max-height: 0;
             overflow: hidden;
@@ -108,7 +115,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <img 
-                    src="https://lh3.googleusercontent.com/d/1UCMSOadfQEJ0-xsTNdVct6AMCkt-D3yr" 
+                    src="logo.png.png" 
                     alt="Peixeweb Logo" 
                     class="h-24 w-auto object-contain"
                     referrerpolicy="no-referrer"
@@ -659,10 +666,14 @@
         </div>
     </div>
 
-    <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+    <script defer src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
     <script>
         // Initialize Lucide icons
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
 
         // Chat button scroll logic
         const chatButton = document.getElementById('chat-button');
