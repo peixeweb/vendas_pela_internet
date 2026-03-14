@@ -36,6 +36,14 @@
         } catch (e) {
             console.warn('Could not redefine window.fetch', e);
         }
+        
+        // Suppress the specific Uncaught TypeError if the above fails
+        window.addEventListener('error', function(e) {
+            if (e.message && e.message.includes('Cannot set property fetch')) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+            }
+        });
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
