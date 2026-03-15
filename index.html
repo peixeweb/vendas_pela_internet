@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TPELK9GBT2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TPELK9GBT2');
-</script>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PR88G77B');</script>
-<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peixeweb - Agência de Tráfego</title>
     
+    <!-- Otimização de Performance: Preconnect e DNS Prefetch -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://lh3.googleusercontent.com">
+
     <!-- E-E-A-T: Schema Markup para Entidade Local/Agência (Aumenta Autoridade e Confiança no Google) -->
     <script type="application/ld+json">
     {
@@ -60,8 +52,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         });
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -85,10 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </style>
 </head>
 <body class="bg-[#0a0a0a] text-white font-sans min-h-screen">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PR88G77B"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
     <!-- Header -->
     <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -98,6 +85,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     alt="Peixeweb Logo" 
                     class="h-24 w-auto object-contain"
                     referrerpolicy="no-referrer"
+                    fetchpriority="high"
+                    loading="eager"
+                    width="200"
+                    height="96"
                 />
             </div>
           
@@ -202,6 +193,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             alt="Equipe Peixeweb - Escritório" 
                             class="w-full h-full object-cover"
                             loading="lazy"
+                            decoding="async"
                             width="800"
                             height="600"
                         />
@@ -326,6 +318,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         alt="Analytics Dashboard" 
                         class="rounded-2xl shadow-xl w-full h-64 object-cover md:translate-y-8"
                         loading="lazy"
+                        decoding="async"
                         width="600"
                         height="400"
                     />
@@ -334,6 +327,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         alt="Growth Chart" 
                         class="rounded-2xl shadow-xl w-full h-64 object-cover"
                         loading="lazy"
+                        decoding="async"
                         width="600"
                         height="400"
                     />
@@ -612,6 +606,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     alt="Peixeweb Logo" 
                     class="h-24 w-auto object-contain"
                     referrerpolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
+                    width="200"
+                    height="96"
                 />
             </div>
           
@@ -668,55 +666,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 
-    <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+    <script defer src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide icons
+            lucide.createIcons();
 
-        // Chat button scroll logic
-        const chatButton = document.getElementById('chat-button');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                chatButton.classList.remove('opacity-0', 'translate-y-5', 'pointer-events-none');
-                chatButton.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
-            } else {
-                chatButton.classList.add('opacity-0', 'translate-y-5', 'pointer-events-none');
-                chatButton.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            // Chat button scroll logic
+            const chatButton = document.getElementById('chat-button');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    chatButton.classList.remove('opacity-0', 'translate-y-5', 'pointer-events-none');
+                    chatButton.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                } else {
+                    chatButton.classList.add('opacity-0', 'translate-y-5', 'pointer-events-none');
+                    chatButton.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                }
+            }, { passive: true });
+
+            // FAQ logic
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const answer = item.querySelector('.faq-answer');
+                    const icon = item.querySelector('.faq-icon');
+                    
+                    // Close others
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            const otherAnswer = otherItem.querySelector('.faq-answer');
+                            const otherIcon = otherItem.querySelector('.faq-icon');
+                            if (otherAnswer && otherIcon) {
+                                otherAnswer.classList.remove('open');
+                                otherIcon.classList.remove('rotate-90');
+                            }
+                        }
+                    });
+
+                    answer.classList.toggle('open');
+                    icon.classList.toggle('rotate-90');
+                });
+            });
+
+            // Mobile badge animation
+            const mobileBadge = document.getElementById('mobile-badge');
+            if(mobileBadge) {
+                setTimeout(() => {
+                    mobileBadge.classList.remove('opacity-0', 'translate-y-10');
+                    mobileBadge.classList.add('opacity-100', 'translate-y-0');
+                }, 500);
             }
         });
-
-        // FAQ logic
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const answer = item.querySelector('.faq-answer');
-                const icon = item.querySelector('.faq-icon');
-                
-                // Close others
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        const otherAnswer = otherItem.querySelector('.faq-answer');
-                        const otherIcon = otherItem.querySelector('.faq-icon');
-                        if (otherAnswer && otherIcon) {
-                            otherAnswer.classList.remove('open');
-                            otherIcon.classList.remove('rotate-90');
-                        }
-                    }
-                });
-
-                answer.classList.toggle('open');
-                icon.classList.toggle('rotate-90');
-            });
-        });
-
-        // Mobile badge animation
-        const mobileBadge = document.getElementById('mobile-badge');
-        if(mobileBadge) {
-            setTimeout(() => {
-                mobileBadge.classList.remove('opacity-0', 'translate-y-10');
-                mobileBadge.classList.add('opacity-100', 'translate-y-0');
-            }, 500);
-        }
 
         // Video Facade Logic
         function loadVideo() {

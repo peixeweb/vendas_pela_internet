@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://peixeweb.github.io/vendas_pela_internet/sitemap.xml
